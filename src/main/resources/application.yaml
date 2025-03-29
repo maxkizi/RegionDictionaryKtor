@@ -9,3 +9,6 @@ datasource:
   url: "jdbc:postgresql://localhost:5432/region_dict"
   username: postgres
   password: postgres
+
+#repo: jdbc
+repo: in-memory
