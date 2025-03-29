@@ -9,7 +9,7 @@ plugins {
     id("io.ktor.plugin") version "3.0.0-rc-1"
 }
 
-group = "com.example"
+group = "org.maxkizi.regiondict"
 version = "0.0.1"
 
 application {

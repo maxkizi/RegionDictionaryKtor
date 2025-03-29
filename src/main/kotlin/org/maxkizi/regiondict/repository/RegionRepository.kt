@@ -1,6 +1,6 @@
-package com.example.repository
+package org.maxkizi.regiondict.repository
 
-import com.example.dto.Region
+import org.maxkizi.regiondict.dto.Region
 
 interface RegionRepository {
     enum class Mode(val configValue: String) {

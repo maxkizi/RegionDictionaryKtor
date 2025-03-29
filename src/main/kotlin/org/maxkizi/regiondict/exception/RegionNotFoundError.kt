@@ -1,4 +1,4 @@
-package com.example.exception
+package org.maxkizi.regiondict.exception
 
 import kotlinx.serialization.Serializable
 

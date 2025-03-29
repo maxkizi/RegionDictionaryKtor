@@ -1,9 +1,9 @@
-package com.example.plugins
+package org.maxkizi.regiondict.plugins
 
-import com.example.repository.RegionRepository
-import com.example.repository.RegionRepositoryImpl
-import com.example.repository.RegionInMemoryRepository
-import com.example.service.RegionService
+import org.maxkizi.regiondict.repository.RegionRepository
+import org.maxkizi.regiondict.repository.RegionRepositoryImpl
+import org.maxkizi.regiondict.repository.RegionInMemoryRepository
+import org.maxkizi.regiondict.service.RegionService
 import io.ktor.server.application.*
 import org.koin.core.module.dsl.bind
 import org.koin.core.module.dsl.singleOf

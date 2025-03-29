@@ -1,9 +1,9 @@
-package com.example.service
+package org.maxkizi.regiondict.service
 
 import arrow.core.Either
-import com.example.exception.RegionNotFoundError
-import com.example.dto.Region
-import com.example.repository.RegionRepository
+import org.maxkizi.regiondict.exception.RegionNotFoundError
+import org.maxkizi.regiondict.dto.Region
+import org.maxkizi.regiondict.repository.RegionRepository
 
 class RegionService(private val repo: RegionRepository) {
     suspend fun addRegion(region: Region) = repo.addRegion(region)

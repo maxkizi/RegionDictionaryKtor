@@ -1,4 +1,4 @@
-package com.example.plugins
+package org.maxkizi.regiondict.plugins
 
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource

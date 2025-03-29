@@ -1,7 +1,7 @@
-package com.example.plugins
+package org.maxkizi.regiondict.plugins
 
-import com.example.dto.Region
-import com.example.service.RegionService
+import org.maxkizi.regiondict.dto.Region
+import org.maxkizi.regiondict.service.RegionService
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*

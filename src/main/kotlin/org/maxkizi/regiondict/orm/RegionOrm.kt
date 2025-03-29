@@ -1,6 +1,6 @@
-package com.example.orm
+package org.maxkizi.regiondict.orm
 
-import com.example.dto.Region
+import org.maxkizi.regiondict.dto.Region
 import org.jetbrains.exposed.dao.IntEntity
 import org.jetbrains.exposed.dao.IntEntityClass
 import org.jetbrains.exposed.dao.id.EntityID

@@ -1,9 +1,9 @@
-package com.example.repository
+package org.maxkizi.regiondict.repository
 
-import com.example.dto.Region
-import com.example.orm.RegionDao
-import com.example.orm.RegionTable
-import com.example.orm.daoToDto
+import org.maxkizi.regiondict.dto.Region
+import org.maxkizi.regiondict.orm.RegionDao
+import org.maxkizi.regiondict.orm.RegionTable
+import org.maxkizi.regiondict.orm.daoToDto
 import kotlinx.coroutines.Dispatchers
 import org.jetbrains.exposed.dao.id.EntityID
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq

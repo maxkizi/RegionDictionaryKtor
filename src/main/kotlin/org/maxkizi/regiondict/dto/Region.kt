@@ -1,4 +1,4 @@
-package com.example.dto
+package org.maxkizi.regiondict.dto
 
 import kotlinx.serialization.Serializable
 

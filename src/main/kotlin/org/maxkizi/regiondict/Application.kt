@@ -1,7 +1,7 @@
-package com.example
+package org.maxkizi.regiondict
 
-import com.example.plugins.*
 import io.ktor.server.application.*
+import org.maxkizi.regiondict.plugins.*
 
 
 fun main(args: Array<String>) {
