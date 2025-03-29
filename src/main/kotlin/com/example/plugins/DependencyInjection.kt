@@ -12,17 +12,19 @@ import org.koin.ktor.plugin.Koin
 
 fun Application.configureDependencyInjection() {
     val config = environment.config
-    install(Koin) {
-        val module = module {
-            singleOf(::RegionService)
+    val serviceBean = module {
+        singleOf(::RegionService)
+    }
 
-            val repoMode = config.property("repo").let { RegionRepository.Mode.resolveFromConfig(it.getString()) }
-            when (repoMode) {
-                RegionRepository.Mode.IN_MEMORY -> singleOf(::RegionInMemoryRepository) { bind<RegionRepository>() }
-                RegionRepository.Mode.JDBC -> singleOf(::RegionRepositoryImpl) { bind<RegionRepository>() }
-            }
-
+    val repoBeans = module {
+        val repoMode = config.property("repo").let { RegionRepository.Mode.resolveFromConfig(it.getString()) }
+        when (repoMode) {
+            RegionRepository.Mode.IN_MEMORY -> singleOf(::RegionInMemoryRepository) { bind<RegionRepository>() }
+            RegionRepository.Mode.JDBC -> singleOf(::RegionRepositoryImpl) { bind<RegionRepository>() }
         }
-        modules(module)
+    }
+
+    install(Koin) {
+        modules(serviceBean, repoBeans)
     }
 }
