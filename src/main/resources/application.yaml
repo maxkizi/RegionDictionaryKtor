@@ -6,7 +6,7 @@ ktor:
       - org.maxkizi.regiondict.ApplicationKt.module
 
 datasource:
-  url: "jdbc:postgresql://localhost:5432/region_dict"
+  url: "jdbc:postgresql://host.docker.internal:5432/region_dict"
   username: postgres
   password: postgres
 
