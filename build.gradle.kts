@@ -12,7 +12,7 @@ group = "com.example"
 version = "0.0.1"
 
 application {
-    mainClass.set("com.example.ApplicationKt")
+    mainClass.set("io.ktor.server.cio.EngineMain")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -21,15 +21,21 @@ application {
 repositories {
     mavenCentral()
 }
+ktor {
+    fatJar {
+        archiveFileName.set("regiondict.jar")
+    }
+}
 
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
     implementation("io.ktor:ktor-serialization-kotlinx-json")
-    implementation("io.ktor:ktor-server-netty-jvm")
+    implementation("io.ktor:ktor-server-cio-jvm")
     implementation("io.ktor:ktor-server-status-pages")
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.arrow-kt:arrow-core:2.0.1")
+    implementation("io.ktor:ktor-server-config-yaml")
     implementation(project.dependencies.platform("io.insert-koin:koin-bom:$koin_version"))
     implementation("io.insert-koin:koin-core")
     implementation("io.insert-koin:koin-ktor")

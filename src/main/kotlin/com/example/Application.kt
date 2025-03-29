@@ -5,12 +5,13 @@ import com.example.plugins.configureExceptionHandling
 import com.example.plugins.configureRouting
 import com.example.plugins.configureSerialization
 import io.ktor.server.application.*
-import io.ktor.server.netty.*
 
 
-fun main(args: Array<String>) = EngineMain.main(args)
+fun main(args: Array<String>) {
+    io.ktor.server.cio.EngineMain.main(args)
+}
 
-fun Application.regionDictApp() {
+fun Application.module() {
     configureSerialization()
     configureRouting()
     configureExceptionHandling()
