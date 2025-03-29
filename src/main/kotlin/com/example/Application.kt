@@ -13,5 +13,5 @@ fun Application.module() {
     configureRouting()
     configureExceptionHandling()
     configureDependencyInjection()
-    configureDatabase()
+    configureDatasource()
 }
