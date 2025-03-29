@@ -1,7 +1,7 @@
 package com.example.plugins
 
-import com.example.repository.RegionInMemoryRepository
 import com.example.repository.RegionRepository
+import com.example.repository.RegionRepositoryImpl
 import com.example.service.RegionService
 import io.ktor.server.application.*
 import org.koin.core.module.dsl.bind
@@ -13,7 +13,7 @@ fun Application.configureDependencyInjection() {
     install(Koin) {
         val module = module {
             singleOf(::RegionService)
-            singleOf(::RegionInMemoryRepository){bind<RegionRepository>()}
+            singleOf(::RegionRepositoryImpl){bind<RegionRepository>()}
         }
         modules(module)
     }

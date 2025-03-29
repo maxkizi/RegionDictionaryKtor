@@ -21,7 +21,13 @@ class ApplicationTest {
 
     @Test
     fun simpleTest() {
-        val first = listOf(1, 2, 3).run { this.first() }
-        println("RESULT: $first")
+        test { a ->
+            testFun1()
+            "result" + a
+        }
+    }
+
+    fun test(block: TestClass.(a: String) -> String) {
+        println(TestClass().block("fg"))
     }
 }

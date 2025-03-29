@@ -1,13 +1,13 @@
 package com.example.repository
 
-import com.example.model.Region
+import com.example.dto.Region
 
 interface RegionRepository {
-    fun addRegion(region: Region)
+    suspend fun addRegion(region: Region)
 
-    fun findAll(): List<Region>
+    suspend fun findAll(): List<Region>
 
-    fun findByRegionCode(regionCode: Int): Region?
+    suspend fun findByRegionCode(regionCode: Int): Region?
 
-    fun delete(regionCode: Int)
+    suspend fun delete(regionCode: Int)
 }

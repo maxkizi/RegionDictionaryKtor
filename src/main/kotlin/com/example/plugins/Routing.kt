@@ -1,6 +1,6 @@
 package com.example.plugins
 
-import com.example.model.Region
+import com.example.dto.Region
 import com.example.service.RegionService
 import io.ktor.http.*
 import io.ktor.server.application.*

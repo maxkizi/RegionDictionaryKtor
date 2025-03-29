@@ -1,9 +1,6 @@
 package com.example
 
-import com.example.plugins.configureDependencyInjection
-import com.example.plugins.configureExceptionHandling
-import com.example.plugins.configureRouting
-import com.example.plugins.configureSerialization
+import com.example.plugins.*
 import io.ktor.server.application.*
 
 
@@ -16,4 +13,5 @@ fun Application.module() {
     configureRouting()
     configureExceptionHandling()
     configureDependencyInjection()
+    configureDatabase()
 }
