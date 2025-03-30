@@ -1,14 +1,14 @@
 ktor:
   deployment:
-    port: 8080
+    port: "$APPLICATION_PORT:8080"
   application:
     modules:
       - org.maxkizi.regiondict.ApplicationKt.module
 
 datasource:
-  url: "jdbc:postgresql://host.docker.internal:5432/region_dict"
-  username: postgres
-  password: postgres
+  url: "$DATASOURCE_JDBC_URL:jdbc:postgresql://localhost:5432/region_dict"
+  username: "$DATASOURCE_USERNAME:postgres"
+  password: "$DATASOURCE_PASSWORD:postgres"
 
 #repo: jdbc
-repo: in-memory
+repo: "$REPO_MODE:in-memory"

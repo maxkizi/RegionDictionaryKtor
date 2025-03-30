@@ -1,0 +1,26 @@
+services:
+  regiondict:
+    #    build:
+    #      context: .
+    #      dockerfile: Dockerfile
+    #      args:
+    #        - GRADLE_OPTS=-Dorg.gradle.daemon=false
+    ports:
+      - 8080:8080
+    image: regiondict:0.0.1
+    environment:
+      DATASOURCE_JDBC_URL: jdbc:postgresql://postgres/region_dict
+      DATASOURCE_USERNAME: postgres
+      DATASOURCE_PASSWORD: postgres
+      APPLICATION_PORT: 8080
+      REPO_MODE: jdbc
+    depends_on:
+      - postgres
+    restart: always
+
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: region_dict
