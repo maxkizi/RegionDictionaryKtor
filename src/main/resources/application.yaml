@@ -11,4 +11,4 @@ datasource:
   password: "$DATASOURCE_PASSWORD:postgres"
 
 #repo: jdbc
-repo: "$REPO_MODE:in-memory"
+repo: "$REPO_MODE:jdbc"

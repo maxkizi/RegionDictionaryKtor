@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: regiondict
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: regiondict
+  template:
+    metadata:
+      labels:
+        app: regiondict
+    spec:
+      containers:
+        - name: region-dict
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+
+          env:
+            - name: REPO_MODE
+              value: {{ .Values.env.REPO_MODE }}
+          ports:
+            - containerPort: 8000

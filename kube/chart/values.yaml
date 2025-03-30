@@ -1,0 +1,5 @@
+image:
+  repository: regiondict
+  tag: 0.0.1
+env:
+  REPO_MODE: in-memory

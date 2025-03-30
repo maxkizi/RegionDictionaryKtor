@@ -20,7 +20,10 @@ fun Application.configureDependencyInjection() {
         val repoMode = config.property("repo").let { RegionRepository.Mode.resolveFromConfig(it.getString()) }
         when (repoMode) {
             RegionRepository.Mode.IN_MEMORY -> singleOf(::RegionInMemoryRepository) { bind<RegionRepository>() }
-            RegionRepository.Mode.JDBC -> singleOf(::RegionRepositoryImpl) { bind<RegionRepository>() }
+            RegionRepository.Mode.JDBC -> {
+                singleOf(::RegionRepositoryImpl) { bind<RegionRepository>() }
+                configureDatasource()
+            }
         }
     }
 
