@@ -1,6 +1,6 @@
 ktor:
   deployment:
-    port: "$APPLICATION_PORT:8080"
+    port: "$APPLICATION_PORT:8081"
   application:
     modules:
       - org.maxkizi.regiondict.ApplicationKt.module
