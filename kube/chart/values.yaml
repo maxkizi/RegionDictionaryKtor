@@ -1,5 +1,5 @@
 image:
-  repository: docker.io/library/regiondict:0.0.1
+  repository: docker.io/library/regiondict
   tag: 0.0.1
 env:
   REPO_MODE: in-memory
